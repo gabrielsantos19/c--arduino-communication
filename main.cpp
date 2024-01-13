@@ -16,15 +16,15 @@ int main(int argc, char* argv[]) {
 
 	serial::Serial my_serial("/dev/ttyUSB0", 16000, serial::Timeout::simpleTimeout(250));
 
-    std::string send_buffer;
-    std::string receive_buffer;
-    std::cout << ">> Enter a message: " << std::endl;
-    std::getline(std::cin, send_buffer);
-    my_serial.write(send_buffer);
-    receive_buffer = my_serial.read(send_buffer.size());
-    std::cout << ">> Received message: (length: " << receive_buffer.length() << ")" << std::endl;
-    std::cout << receive_buffer << std::endl;
-    std::cout << std::endl;
+	std::string send_buffer;
+	std::string receive_buffer;
+	std::cout << ">> Enter a message: " << std::endl;
+	std::getline(std::cin, send_buffer);
+	my_serial.write(send_buffer);
+	receive_buffer = my_serial.read(send_buffer.size());
+	std::cout << ">> Received message: (length: " << receive_buffer.length() << ")" << std::endl;
+	std::cout << receive_buffer << std::endl;
+	std::cout << std::endl;
 
 	my_serial.close();
 
